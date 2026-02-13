@@ -22,29 +22,36 @@ public class BookManagementservice
   /// </summary>
   public void OnStart ()
   { 
-    Console.WriteLine ("Welcome to the book management system. You currently have 2 books in your system. What would you like to do \n 1. Display books \n 2. Display Book by Book ID \n 3. Add New Book \n 4. Remove Book by Book ID \n 5. Exit");
-
-    string UserResponse = Console.ReadLine();
-
-    switch(UserResponse)
+    Console.WriteLine("Welcome to the book management system. You currently have 2 books in your system. What would you like to do?");
+    do
     {
-      case "1":
-        DisplayAllBooks();
-        break;
-      case "2":
-        DisplayBookByID();
-        break;
-      case "3": 
-        AddBook();
-        break;
-      case "4":
-        RemoveBook();
-        break;
-      case "5":
-        Environment.Exit(0);
-        break;
-    }
+      Console.WriteLine("1. Display books");
+      Console.WriteLine("2. Display Book by Book ID");
+      Console.WriteLine("3. Add New Book");
+      Console.WriteLine("4. Remove Book by Book ID"); 
+      Console.WriteLine("5. Exit");
 
+      string UserResponse = Console.ReadLine();
+
+      switch(UserResponse)
+      {
+        case "1":
+          DisplayAllBooks();
+          break;
+        case "2":
+          DisplayBookByID();
+          break;
+        case "3": 
+          AddBook();
+          break;
+        case "4":
+          RemoveBook();
+          break;
+        case "5":
+          Environment.Exit(0);
+          break;
+      }
+    } while (true);
   }
   /// <summary>
   /// Method to add books to the collection
@@ -77,12 +84,13 @@ public class BookManagementservice
   /// Display a book.
   /// </summary>
   /// <param name="book">Book that is being displayed.</param>
-  public void DisplayBook(Book book)
+  private void DisplayBook(Book book)
   {
     Console.WriteLine($"ID: {book.BookId}");
     Console.WriteLine($"Title: {book.Title}");
     Console.WriteLine($"Author: {book.Author}");
     Console.WriteLine($"Genre: {book.Genre}");
+    Console.WriteLine("--------------------");
   }
   /// <summary>
   /// Displays all books.
