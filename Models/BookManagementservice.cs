@@ -37,7 +37,10 @@ public class BookManagementservice
       case "3": 
         AddBook();
         break;
-        case "5":
+      case "4":
+        RemoveBook();
+        break;
+      case "5":
         Environment.Exit(0);
         break;
     }
@@ -91,5 +94,18 @@ public class BookManagementservice
     {
       DisplayBook(book);
     }
+  }
+
+
+  /// <summary>
+  /// Asks for ID and removes book from the collection of books by ID given by user.
+  /// </summary>
+  /// <author>Henry Slough</author>
+  void RemoveBook()
+  {
+    Console.WriteLine("Enter ID of book to remove: ");
+    string toRemove = Console.ReadLine();
+
+    BookCollection.Remove(toRemove);
   }
 }
