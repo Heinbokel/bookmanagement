@@ -37,6 +37,9 @@ public class BookManagementservice
       case "3": 
         AddBook();
         break;
+        case "5":
+        Environment.Exit(0);
+        break;
     }
 
   }
