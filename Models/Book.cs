@@ -6,10 +6,10 @@ namespace BookManagement.Models.Book;
 /// <author>Henry Slough</author>
 public class Book
 {
-    string BookId {get; set;}
-    string Title {get; set;}
-    string Author {get; set;}
-    string Genre {get; set;}
+    public string BookId {get; set;}
+    public string Title {get; set;}
+    public string Author {get; set;}
+    public string Genre {get; set;}
 
     /// <summary>
     /// Complete constructor for Book class.

@@ -28,9 +28,14 @@ public class BookManagementservice
 
     switch(UserResponse)
     {
+      case "1":
+        DisplayAllBooks();
+        break;
+      case "2":
+        DisplayBookByID();
+        break;
       case "3": 
         AddBook();
-        
         break;
     }
 
@@ -52,5 +57,36 @@ public class BookManagementservice
     Book book = new Book(bookID, bookTitle, bookAuthor, bookGenre);
     BookCollection.Add(bookID, book);
   }
-  
+  /// <summary>
+  /// Displays book based on user input.
+  /// </summary>
+  public void DisplayBookByID()
+  {
+    Console.WriteLine("What is the ID of the book you'd like to look up?");
+    string inputID = Console.ReadLine();
+    
+    DisplayBook(BookCollection[inputID]);
+  }
+  /// <summary>
+  /// Display a book.
+  /// </summary>
+  /// <param name="book">Book that is being displayed.</param>
+  public void DisplayBook(Book book)
+  {
+    Console.WriteLine($"ID: {book.BookId}");
+    Console.WriteLine($"Title: {book.Title}");
+    Console.WriteLine($"Author: {book.Author}");
+    Console.WriteLine($"Genre: {book.Genre}");
+  }
+  /// <summary>
+  /// Displays all books.
+  /// </summary>
+  public void DisplayAllBooks()
+  {
+    Console.WriteLine("BOOKS AVAILABLE:");
+    foreach(Book book in BookCollection.Values)
+    {
+      DisplayBook(book);
+    }
+  }
 }
