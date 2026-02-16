@@ -1,4 +1,4 @@
-namespace BookManagement.Models.Book;
+namespace BookManagement.Models;
 
 /// <summary>
 /// Class to hold all book-related fields.
